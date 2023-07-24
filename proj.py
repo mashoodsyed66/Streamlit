@@ -25,7 +25,7 @@ def predict_stress(model, scaler, person_data_sequence):
     return int(prediction[0, -1] > 0.5)
 
 # Load your dataset (replace 'your_dataset.csv' with the actual file name)
-df = pd.read_csv('C:/Users/OK/dfclean.csv')
+df = pd.read_csv('dfclean.csv')
 
 # Feature selection and target variable
 features = ['Gender', 'Age', 'Bmi', 'Temperature', 'Pulse rate']
@@ -40,7 +40,7 @@ scaler = StandardScaler()
 scaler.fit(X.reshape(-1, X.shape[-1]))
 
 # Load the trained LSTM model (replace 'path_to_your_trained_model' with the actual path to your model)
-model = tf.keras.models.load_model('C:/Users/OK/trained_model.h5')
+model = tf.keras.models.load_model('trained_model.h5')
 
 # Streamlit app
 def get_session_state():
